@@ -130,24 +130,24 @@ write_basic_package_version_file(
 export(TARGETS sol2 FILE "${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-targets.cmake")
 
 install(TARGETS sol2
-	      EXPORT sol2-targets
+        EXPORT sol2-targets
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 install(EXPORT sol2-targets
         NAMESPACE lua::
-	      DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/sol
-        FILES_MATCHING PATTERN "*.h"
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/sol/
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/sol2
+        FILES_MATCHING PATTERN "*.h" "*.hpp"
         PATTERN ".git" EXCLUDE)
 
 install(FILES
-	      "${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config.cmake"
-	      "${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config-version.cmake"
-	      DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
+        "${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config-version.cmake"
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
 
 # # # Single header target
 # Find Python3 for single header / forward header generation
