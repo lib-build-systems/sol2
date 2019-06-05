@@ -139,10 +139,8 @@ install(EXPORT sol2-targets
         NAMESPACE lua::
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/sol/
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/sol2
-        FILES_MATCHING PATTERN "*.h" "*.hpp"
-        PATTERN ".git" EXCLUDE)
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/sol
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/sol2)
 
 install(FILES
         "${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config.cmake"
