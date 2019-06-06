@@ -139,11 +139,13 @@ install(EXPORT sol2-targets
         NAMESPACE lua::
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/sol2")
 
+# Copy dirname + its contents, result: include/sol2/sol/*.hpp
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/sol
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/sol2)
 
+# Copy only the hpp file, result: include/sol2/sol.hpp
 install(FILES ${PROJECT_SOURCE_DIR}/sol.hpp
-	DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
+	DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/sol2")
 
 install(FILES
         "${CMAKE_CURRENT_BINARY_DIR}/cmake/sol2-config.cmake"
